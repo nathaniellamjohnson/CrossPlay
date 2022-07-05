@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify to YT Music Playlist Converter</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="onPageLoad()">
+
+<!-- First load of page -->
+<div id="firstLoad">
+
+    <h1> Crossplay </h1>
+
+    <button type="button" id="submitButton" onclick="requestAuthorization()" >Submit</button>
+</div>
+
+<!-- After spotify redirect -->
+<div id="spotifyRedirect">
+
+    <p id="temp"> Spotify authenticated </p>
+
+</div>
+
+</body>
+<script src="spotify-web-api.js"> </script>
+<script src="main.js"></script>
+</html>
