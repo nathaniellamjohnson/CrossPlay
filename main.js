@@ -13,3 +13,13 @@ function requestSpotifyAuthorization()
     url +=
         window.location.href = url; // Go to Spotify Authorization Screen with added
 }
+
+function requestYTAuthorization()
+{
+    alert("hello yt");
+}
+
+function requestAMAuthorization()
+{
+    alert("hello the 5 apple music users ik");
+}
