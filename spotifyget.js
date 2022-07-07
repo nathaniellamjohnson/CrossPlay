@@ -14,8 +14,8 @@ function onSpotifyAuthPageLoad()
         {
             console.log("Redirected from Spotify, handling access tokens.");
             handleAccessToken();
-            document.getElementById('firstLoad').style.display = 'none';
-            document.getElementById('spotifyRedirect').style.display = 'block';
+            getUserInfo();
+            getUserPlaylists();
         }
         else
         {
@@ -121,6 +121,21 @@ function getPlaylistItems(id)
     var e = spotifyApi.getPlaylistTracks(id);
     e.then(gotPlaylistItems, gotPlaylistItemsError);
 }
+
+function getPlaylistItemsCustomLink(link)
+{
+    if ( link.includes("https://open.spotify.com/playlist/") ) {
+        parsedID = link.substring(link.indexOf("https://open.spotify.com/playlist/") + 34, link.length);
+        console.log(parsedID);
+        getPlaylistItems(parsedID);
+    }
+    else
+    {
+        alert("Not a valid playlist link - please try again.");
+        document.getElementById("customPlaylistId").value = "";
+    }
+}
+
 function gotPlaylistItems(value)
 {
     console.log(value);
@@ -147,3 +162,4 @@ function gotPlaylistItemsError(value)
 {
     console.log(value);
 }
+

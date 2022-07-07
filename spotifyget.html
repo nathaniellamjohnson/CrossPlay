@@ -9,23 +9,21 @@
 <body onload="onSpotifyAuthPageLoad()">
 
 <!-- After spotify redirect -->
-<div id="spotifyRedirect">
+<div>
 
     <p id="temp"> Spotify authenticated </p>
-    <button type="button" id="getUserInfoButton" onclick="getUserInfo()">Get User Info</button>
-    <button type="button" id="getUserPlaylists" onclick="getUserPlaylists()">Get Playlists</button>
     <div id="userInfo">
         <p id="username" class="hide"> you shouldn't be seeing this </p>
-        <img id="profileImage" class="hide" src="">
+        <img id="profileImage" class="hide" src="" alt="Spotify Profile Picture">
     </div>
     <div>
 
         <table id="playlistTable" class="hide">
 
             <tr>
-                <td> <p>Not the playlist you're looking for? Copy the ID in to here. </p></td>
-                <td> <input type="text" id="playlistId"></td>
-                <td> <button type="button" id="getPlaylistId" onclick="getPlaylistItems(document.getElementById('playlistId').value)"> Get Playlist </td>
+                <td> <label for="customPlaylistId"> Not the playlists you're looking for? Copy the link in to here. </label> </td>
+                <td><input type="url" id="customPlaylistId"></td>
+                <td> <button type="button" id="getPlaylistId" onclick="getPlaylistItemsCustomLink(document.getElementById('customPlaylistId').value)" > Get Playlist </button> </td>
             </tr>
         </table>
     </div>
