@@ -4,42 +4,18 @@
     <meta charset="UTF-8">
     <title>Spotify to YT Music Playlist Converter</title>
     <link rel="stylesheet" href="main.css">
+
 </head>
 
-<body onload="onPageLoad()">
+<body>
 
-<!-- First load of page -->
-<div id="firstLoad">
-
+<div>
     <h1> Crossplay </h1>
-
-    <button type="button" id="submitButton" onclick="requestAuthorization()" >Submit</button>
+    <button type="button" id="submitButton" onclick="requestSpotifyAuthorization()" >Submit</button>
 </div>
 
-<!-- After spotify redirect -->
-<div id="spotifyRedirect" class="hide">
 
-    <p id="temp"> Spotify authenticated </p>
-    <button type="button" id="getUserInfoButton" onclick="getUserInfo()">Get User Info</button>
-    <button type="button" id="getUserPlaylists" onclick="getUserPlaylists()">Get Playlists</button>
-    <div id="userInfo">
-        <p id="username" class="hide"> you shouldn't be seeing this </p>
-        <img id="profileImage" class="hide" src="">
-    </div>
-    <div>
-
-        <table id="playlistTable" class="hide">
-
-            <tr>
-                <td> <p>Not the playlist you're looking for? Copy the ID in to here. </p></td>
-                <td> <input type="text" id="playlistId"></td>
-                <td> <button type="button" id="getPlaylistId" onclick="getPlaylistItems(document.getElementById('playlistId').value)"> Get Playlist </td>
-             </tr>
-        </table>
-    </div>
-</div>
 
 </body>
-<script src="spotify-web-api.js"> </script>
 <script src="main.js"></script>
 </html>
